@@ -1,6 +1,6 @@
 <h1 align="center">openwrt-24.10 CURL HTTP/3 prebuilt packages</h1>
 <p align="center">
-  <img width="200" src="https://curl.se/logo/" />
+  <img width="200" src="https://curl.se/logo/curl-logo.svg" />
 </p>
 <p align="center">
   <b>build curl library with quictls + libngtcp2 + libnghttp3</b>
