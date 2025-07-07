@@ -16,38 +16,8 @@ jobs:
       matrix:
         arch:
           - aarch64_cortex-a53
-          - aarch64_cortex-a72
-          - aarch64_generic
-          - arm_arm1176jzf-s_vfp
-          - arm_arm926ej-s
-          - arm_cortex-a15_neon-vfpv4
-          - arm_cortex-a5_vfpv4
-          - arm_cortex-a7
-          - arm_cortex-a7_neon-vfpv4
-          - arm_cortex-a7_vfpv4
-          - arm_cortex-a8_vfpv3
-          - arm_cortex-a9
-          - arm_cortex-a9_neon
-          - arm_cortex-a9_vfpv3-d16
-          - arm_fa526
-          - arm_mpcore
-          - arm_xscale
-          - i386_pentium-mmx
-          - i386_pentium4
-          - mips64_octeonplus
-          - mips_24kc
-          - mips_4kec
-          - mips_mips32
-          - mipsel_24kc
-          - mipsel_24kc_24kf
-          - mipsel_74kc
-          - mipsel_mips32
-          - powerpc_464fp
-          - powerpc_8548
-          - riscv64_riscv64
-          - x86_64
         tag:
-          - openwrt-23.05
+          - openwrt-24.10
 
     steps:
       - uses: actions/checkout@v4
@@ -57,7 +27,7 @@ jobs:
       - name: Download Source
         run: |
           # curl
-          git clone https://github.com/openwrt/packages -b openwrt-23.05 --depth=1
+          git clone https://github.com/openwrt/packages -b openwrt-24.10 --depth=1
           mv packages/net/curl curl
           rm -rf packages
           # enable openssl & nghttp3 & ngtcp2
@@ -70,7 +40,7 @@ jobs:
           git clone https://github.com/sbwml/package_libs_ngtcp2 ngtcp2
           git clone https://github.com/sbwml/package_libs_nghttp3 nghttp3
           # openssl quic
-          git clone https://github.com/openwrt/openwrt -b openwrt-23.05 --depth=1
+          git clone https://github.com/openwrt/openwrt -b openwrt-24.10 --depth=1
           cp -a openwrt/package/libs/openssl openssl
           rm -rf openwrt
           mirror="raw.githubusercontent.com/sbwml/r4s_build_script/master"
